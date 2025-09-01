@@ -1,0 +1,90 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import Link from '../components/Link.astro';
+---
+<MainLayout title="Astro, Tailwind, Alpine, Motion One og Animate CSS Starter">
+	<article class="prose">
+		<h1>Astro, Tailwind, Alpine, Motion One og en lille samling Tailwind plugins</h1>
+		<p>Dette lille site er lavet med små kodestumper, der viser de forskellige frontend frameworks, vi skal bruge i løbet af valgfaget.</p>
+		<ul> 
+			<li class="hover:animate-shake">
+				<Link href="https://astro.build/" target="_blank">Astro<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://tailwindcss.com/" target="_blank">Tailwind<Link>
+			</li>	
+			<li class="hover:animate-shake">
+				<Link href="https://alpinejs.dev/" target="_blank">Alpine.js<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://motion.dev/" target="_blank">Motion One<Link>
+			</li>
+		</ul>
+
+		<h2>Dertil et par Tailwind plugins og andre godbidder</h2>
+		<ul id="stagger" class="list-disc">
+			<li class="hover:animate-shake">
+				<Link href="https://github.com/tailwindlabs/tailwindcss-typography" target="_blank">TailwindCSS Typography<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://github.com/tailwindlabs/tailwindcss-forms" target="_blank">TailwindCSS Forms<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://www.tailwindcss-animated.com/" target="_blank">TailwindCSS Animated<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://github.com/heidkaemper/tailwindcss-intersect" target="_blank">TailwindCSS Intersect<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://heroicons.com/" target="_blank">Hero Icons<Link>
+			</li>
+			<li class="hover:animate-shake">
+				<Link href="https://heropatterns.com/" target="_blank">Hero Patterns:<Link> Hero patterns er brugt til baggrunden på denne side under en <Link href="https://creativecommons.org/licenses/by/4.0/" target="_blank">creative commons</Link> licens.
+			</li>
+		</ul>
+
+		<h2>Når du skal starte et nyt projekt op</h2>
+
+		<p>Når du skal starte et nyt projekt op, skal du bruge starter-templaten fra <Link href="https://github.com/stefangrage/astro-tailwind-starter" target="_blank">github.com/stefangrage/did-e24-starter</Link></p>
+
+		<p>Jeg vil opfordre dig til at lave din egen starter, som du udvikler på i løbet af hele semestret. Den kan du lave ved at lave et nyt starter-template repo på basis af min starter.</p>
+
+		<p>Starter templaten indeholder en fil/mappestruktur, et par komponeneter, et layout og en side, og alle de frontend frameworks, vi arbejder med i løbet af semestret.</p>
+
+		<p>
+			Start med at clone repo'et og installere alt det nødvendige ved at skrive <span class="italic font-bold">"npm i"</span> i terminalen. Kør sitet ved at skrive <span class="italic font-bold">"npm run dev"</span> i terminalen.
+		</p>
+		<p>
+			Tilpas derefter indholdet i "pages, layouts, components og assets...""
+		</p>
+		<p>
+			Og vigtigst af alt: Lav noget godt:-)
+		</p>
+		<h2>Inspiration</h2>
+		<p>
+			Du kan downloade det her lille eksempelsite fra <Link href="https://github.com/stefangrage/astro-tailwind-eksempel" target="_blank">github</Link>, og køre det lokalt. Forhåbenltligt ligner og fungerer det som <Link href="https://eloquent-genie-718325.netlify.app/">online-udgaven på Netlify</Link>.
+		</p>
+		<p>
+			Se også <Link href="http://motherfuckingwebsite.com/" target="_blank">dette lille site</a> for lidt inspiration.
+		</p>
+		<div>
+		<Button>Fang mig hvis du kan:-)</Button>
+		</div>
+	</article>
+</MainLayout>
+<script>
+	// Her kan du skrive JavaScript, der skal køre på siden
+	// Du kan også bruge Alpine.js eller Motion One til at lave interaktive elementer
+	/* Stagger animation */
+	import { animate, stagger, inView } from "motion";
+	inView( "#stagger" , () =>{
+		animate(
+		"#stagger li",
+		{ opacity: [0, 1] },
+		{ 
+			delay: stagger(1, { startDelay: 1 })
+		}
+		)
+	})
+</script>
